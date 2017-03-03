@@ -3,6 +3,34 @@ Datamaps
 
 [![Join the chat at https://gitter.im/markmarkoh/datamaps](https://badges.gitter.im/markmarkoh/datamaps.svg)](https://gitter.im/markmarkoh/datamaps?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+### Indian regulations compliant maps
+
+India has made it illegal to show a map (within India) with disputed territories that are actually according to internationally accepted standards. So this is a version of India-compliant world map. Preview [here](https://github.com/viranch/datamaps/blob/india/src/js/data/world.topo.json).
+
+Downloads:
+
+ - [World map](https://raw.githubusercontent.com/viranch/datamaps/india/dist/datamaps.world.min.js)
+ - [World map HiRes](https://raw.githubusercontent.com/viranch/datamaps/india/dist/datamaps.world.hires.min.js)
+
+Notes for users:
+
+* Only world map is regulations compliant, India-only map (`datamaps.ind.min.js`) is not (yet). Contributions welcome!
+
+Contributor guidlines for making further changes:
+
+* Install [Atom editor](https://atom.io/) and install [geo-editor package](https://atom.io/packages/geo-editor)
+* Open `src/js/data/world.json` or `src/js/data/ind.json` in Atom, press `Ctrl+Alt+O` to open map editor
+* Make relevant changes and save the JSON file.
+* `npm install topojson-server`
+* Convert the modified geojson file to topojson file: `/path/to/node_modules/topojson-server/bin/geo2topo src/js/data/world.json > src/js/data/world.topo.json`
+* `npm install grunt-cli`
+* `/path/to/node_modules/grunt-cli/bin/grunt build`
+* `npm install <package>` that above command complains are missing
+* Build the project: re-run `.../grunt build` command
+* Make use of the newly generated files in `dist/` directory
+
+---
+
 #### Interactive maps for data visualizations. Bundled into a single Javascript file.
 
 Datamaps is intended to provide some data visualizations based on geographical data. It's SVG-based, can scale to any screen size, and includes everything inside of 1 script file.
